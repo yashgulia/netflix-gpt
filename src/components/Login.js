@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./Header";
 
 const Login = () => {
+  const [isSignInForm, setIsSignInForm] = useState(true);
+
+  const toggleSignInForm = () => {
+    setIsSignInForm(!isSignInForm);
+  };
   return (
     <div>
       <Header />
@@ -12,7 +17,16 @@ const Login = () => {
         />
       </div>
       <form className="w-4/12 absolute p-16 mt-20 bg-black bg-opacity-85 my-36 mx-auto right-0 left-0 text-white rounded-md">
-        <h1 className="font-bold pt-0 text-3xl py-4">Sign In</h1>
+        <h1 className="font-bold pt-0 text-3xl py-4">
+          {isSignInForm ? "Sign In" : "Sign Up"}
+        </h1>
+        {!isSignInForm && (
+          <input
+            type="text"
+            placeholder="Full Name"
+            className="p-4 my-2 w-full bg-gray-700 bg-opacity-60 rounded-md border border-gray-500"
+          />
+        )}
         <input
           type="text"
           placeholder="Email or mobile number"
@@ -24,23 +38,31 @@ const Login = () => {
           className="p-4 my-2 w-full bg-gray-700 bg-opacity-60 rounded-md border border-gray-500"
         />
         <button className="p-2 my-4 bg-red-600 w-full rounded-md">
-          Sign In
+          {isSignInForm ? "Sign In" : "Sign Up"}
         </button>
-        <p className="text-center">OR</p>
-        <button className="p-2 my-4 bg-gray-400 bg-opacity-40 w-full rounded-md">
-          Use a sign-in code
-        </button>
-        <p className="text-center py-2">Forgot password?</p>
-        <div>
-          <input
-            type="checkbox"
-            name="remember"
-            id="remember"
-            className="h-5 w-5 rounded"
-          />
-          <span className="px-4">Remember me</span>
-        </div>
-        <p className="py-4">New to Netflix? Sign up now.</p>
+        {isSignInForm && (
+          <>
+            <p className="text-center">OR</p>
+            <button className="p-2 my-4 bg-gray-400 bg-opacity-40 w-full rounded-md">
+              Use a sign-in code
+            </button>
+            <p className="text-center py-2">Forgot password?</p>
+            <div>
+              <input
+                type="checkbox"
+                name="remember"
+                id="remember"
+                className="h-4 w-4 rounded"
+              />
+              <span className="px-4">Remember me</span>
+            </div>
+          </>
+        )}
+        <p className="py-4 cursor-pointer" onClick={toggleSignInForm}>
+          {isSignInForm
+            ? "New to Netflix? Sign up now."
+            : "Already Registered! Sign In now."}
+        </p>
         <p className="text-sm text-gray-500">
           This page is protected by Google reCAPTCHA to ensure you're not a bot.
           Learn more.
