@@ -7,6 +7,8 @@
 - Login Form
 - Sign Up Form
 - Form Validation
+- Firebase Setup
+- Deploying our app to Production
 
 # Features To Build
 
