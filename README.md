@@ -9,6 +9,7 @@
 - Form Validation
 - Firebase Setup
 - Deploying our app to Production
+- Create SignUp User Account
 
 # Features To Build
 
