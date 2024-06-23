@@ -14,6 +14,8 @@
 - Redux Store setup with userSlice
 - Sign Out Implementation
 - Update Profile
+- Fetch from TMDB Movies
+- Restricted Route
 
 # Features To Build
 
