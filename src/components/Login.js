@@ -4,10 +4,13 @@ import { checkValidData } from "../utils/validate";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
 
@@ -32,7 +35,19 @@ const Login = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
+          updateProfile(user, {
+            displayName: name.current.value,
+            photoURL:
+              "https://lh3.googleusercontent.com/ogw/AF2bZyjUwHaVrkoW_BAY_Bd1sfRV8i09TzLqTt-Tze31CLUORak=s64-c-mo",
+          })
+            .then(() => {
+              navigate("/browse");
+            })
+            .catch((error) => {
+              setErrorMessage(error.message);
+            });
           console.log(user);
+          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -48,6 +63,7 @@ const Login = () => {
         .then((userCredential) => {
           const user = userCredential.user;
           console.log(user);
+          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -74,6 +90,7 @@ const Login = () => {
         </h1>
         {!isSignInForm && (
           <input
+            ref={name}
             type="text"
             placeholder="Full Name"
             className="p-4 my-2 w-full bg-gray-700 bg-opacity-60 rounded-md border border-gray-500"
