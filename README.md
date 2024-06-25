@@ -16,6 +16,10 @@
 - Update Profile
 - Fetch from TMDB Movies
 - Restricted Route
+- Unsubscribe onAuthStateChanged
+- Constant file for hardcoded values
+- Register TMDB API & get access token
+- Get data from Now Playing(Movie Lists) API
 
 # Features To Build
 

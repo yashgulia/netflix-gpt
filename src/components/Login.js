@@ -10,6 +10,7 @@ import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { AVATAR } from "../utils/constants";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -40,8 +41,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL:
-              "https://lh3.googleusercontent.com/ogw/AF2bZyjUwHaVrkoW_BAY_Bd1sfRV8i09TzLqTt-Tze31CLUORak=s64-c-mo",
+            photoURL: AVATAR,
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
