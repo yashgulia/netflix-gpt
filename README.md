@@ -25,6 +25,7 @@
 - Fetch data for Trailer video and update store
 - Embedded Youtube video with autoplay
 - Tailwind to Main Container
+- Build Secondary Component
 
 # Features To Build
 
