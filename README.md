@@ -20,6 +20,11 @@
 - Constant file for hardcoded values
 - Register TMDB API & get access token
 - Get data from Now Playing(Movie Lists) API
+- Custom Hook for movies
+- Updating store with movie data
+- Fetch data for Trailer video and update store
+- Embedded Youtube video with autoplay
+- Tailwind to Main Container
 
 # Features To Build
 

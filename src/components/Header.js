@@ -41,12 +41,14 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="absolute px-12 w-screen bg-gradient-to-b from-black z-10 flex justify-between">
-      <img className="w-48" src={Logo} alt="Logo" />
+    <div className="absolute px-10 w-screen bg-gradient-to-b from-black z-10 flex justify-between">
+      <img className="w-40" src={Logo} alt="Logo" />
       {user && (
         <div className="flex p-2">
           <img className="w-12 h-12" alt="user" src={user?.photoURL} />
-          <button onClick={handleSignOut}>(Sign Out)</button>
+          <button className="text-white" onClick={handleSignOut}>
+            (Sign Out)
+          </button>
         </div>
       )}
     </div>
