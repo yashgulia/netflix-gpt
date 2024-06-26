@@ -26,6 +26,7 @@
 - Embedded Youtube video with autoplay
 - Tailwind to Main Container
 - Build Secondary Component
+- Build Movie List and Movie Card
 
 # Features To Build
 
