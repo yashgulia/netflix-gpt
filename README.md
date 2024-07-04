@@ -27,6 +27,7 @@
 - Tailwind to Main Container
 - Build Secondary Component
 - Build Movie List and Movie Card
+- GPT Search Feature
 
 # Features To Build
 
